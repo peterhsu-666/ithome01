@@ -1,2 +1,21 @@
 <h1>測試頁</h1>
 <input type="button" value="回首頁" onclick="location.href='index.html'">
+
+<body>
+  <!--被 Vue 綁定的 DOM 物件-->
+  <div id="app">
+    <p>{{ message }}</p>
+  </div>
+  <!--載入 Vue 的 CDN --> 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--撰寫 Vue -->
+  <script>
+  const vm = new Vue ({
+    el: '#app',
+    data: {
+      // data資料
+      message: 'Helle Vue！'
+    }
+  })
+  </script>
+</body>
