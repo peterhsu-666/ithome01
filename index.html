@@ -4,6 +4,14 @@
   <!--被 Vue 綁定的 DOM 物件-->
   <div id="app">
     <p>{{ message }}</p>
+    <p>Text: {{ text }}</p>
+    <!--僅顯示HTML文字-->
+    <p>{{ rawHTML }}</p>
+    <!--顯示文字及設定的樣式-->
+    <p v-html="rawHTML"></p>
+    <img v-bind:src="imgUrl">
+    <p> {{ num + 1 }}</p>
+    <p> {{ doSth? '可以做':'不可以做' }}</p>
   </div>
   <!--載入 Vue 的 CDN-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -11,7 +19,8 @@
   const vm = new Vue({
     el: '#app',
     data: {
-    message: 'Hellow Vue!'
+      message: 'Hellow Vue!',
+      
     }
   })
   </script>
