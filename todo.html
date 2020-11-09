@@ -21,6 +21,39 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
+Vue.component('todo-list', {
+  template:`
+  <div :class="[todo.isComplete ? 'success' : 'error', 'todo-wrapper']">
+    <div class="todo-title">
+      {{todo.title}}
+    </div>
+    <div class="todo-icons">
+        <i class="fa fa-check" aria-hidden="true" @click="doneTodo"></i>
+        <i class="fa fa-trash-alt" aria-hidden="true" @click="deleteTodo"></i>
+    </div>
+  </div>
+  `,
+  props:{
+    todo:{
+      type:Object,
+      required:true
+    }
+  },
+  methods:{
+    deleteTodo(){
+      this.$emit('delete-todo',{
+        title: this.todo.title
+      })
+    },
+    doneTodo(){
+      this.$emit('done-todo',{
+        title: this.todo.title
+      })
+    }
+  }
+}); 
+  
+  
 const todos = [
   {
     title: "手機",
@@ -106,37 +139,7 @@ const todos = [
   }
       })
       
-vm.component('todo-list', {
-  template:`
-  <div :class="[todo.isComplete ? 'success' : 'error', 'todo-wrapper']">
-    <div class="todo-title">
-      {{todo.title}}
-    </div>
-    <div class="todo-icons">
-        <i class="fa fa-check" aria-hidden="true" @click="doneTodo"></i>
-        <i class="fa fa-trash-alt" aria-hidden="true" @click="deleteTodo"></i>
-    </div>
-  </div>
-  `,
-  props:{
-    todo:{
-      type:Object,
-      required:true
-    }
-  },
-  methods:{
-    deleteTodo(){
-      this.$emit('delete-todo',{
-        title: this.todo.title
-      })
-    },
-    doneTodo(){
-      this.$emit('done-todo',{
-        title: this.todo.title
-      })
-    }
-  }
-}); 
+
       
     </script>
   </body>
