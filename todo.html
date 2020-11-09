@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    
+  <div id="app">
+    <h1>My Todo List</h1>
+    <todo-list 
+               v-for="todo in todos" 
+               :key="todo.id" 
+               :todo="todo" 
+               @delete-todo="handleDeleteTodo" 
+               @done-todo="handleDoneTodo"
+    ></todo-list>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const todos = [
+  {
+    title: "手機",
+    isComplete: false
+  },
+  {
+    title: "鑰匙",
+    isComplete: false
+  },
+  {
+    title: "皮夾",
+    isComplete: false
+  },
+  {
+    title: "充電線",
+    isComplete: false
+  },
+    {
+    title: "毛巾",
+    isComplete: false
+  },
+  {
+    title: "行動電源",
+    isComplete: false
+  },
+  {
+    title: "睡衣",
+    isComplete: false
+  },
+  {
+    title: "衣服",
+    isComplete: false
+  },
+    {
+    title: "牙刷/牙膏",
+    isComplete: false
+  },
+  {
+    title: "刮鬍刀",
+    isComplete: false
+  },
+  {
+    title: "手錶",
+    isComplete: false
+  },
+    {
+    title: "眼藥水",
+    isComplete: false
+  },
+  {
+    title: "襪子",
+    isComplete: false
+  },
+  {
+    title: "口罩",
+    isComplete: false
+  },
+  {
+    title: "眼鏡",
+    isComplete: false
+  },
+  {
+    title: "泳衣/帽/蛙鏡",
+    isComplete: false
+  },
+];
+      
+      let vm = new Vue({
+        el:"#id",
+  data: {
+      todos: todos
+  },
+ methods: {
+    handleDeleteTodo({title}){
+      console.log(title);
+      this.todos = this.todos.filter(item=> item.title !== title)
+    },
+    handleDoneTodo({title}){
+      const targetTodo = this.todos.find((item) => item.title === title);
+      targetTodo.isComplete = !targetTodo.isComplete;
+      console.log(targetTodo.isComplete);
+    }
+  }
+      })
+      
+Vue.component('todo-list', {
+  template:`
+  <div :class="[todo.isComplete ? 'success' : 'error', 'todo-wrapper']">
+    <div class="todo-title">
+      {{todo.title}}
+    </div>
+    <div class="todo-icons">
+        <i class="fa fa-check" aria-hidden="true" @click="doneTodo"></i>
+        <i class="fa fa-trash-alt" aria-hidden="true" @click="deleteTodo"></i>
+    </div>
+  </div>
+  `,
+  props:{
+    todo:{
+      type:Object,
+      required:true
+    }
+  },
+  methods:{
+    deleteTodo(){
+      this.$emit('delete-todo',{
+        title: this.todo.title
+      })
+    },
+    doneTodo(){
+      this.$emit('done-todo',{
+        title: this.todo.title
+      })
+    }
+  }
+}); 
+      
+    </script>
+  </body>
+</html>
+
+<!-- Use preprocessors via the lang attribute! e.g. <style lang="scss"> -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-trash-alt {
+  color: red;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fa-check {
+  color: green;
+  margin-right: 5px;
+}
+
+.todo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+  width: 270px;
+  padding: 1.5rem 0.8rem;
+  magrin-top: 0.3rem;
+}
+
+.todo-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.todo-icons {
+  display: flex;
+  cursor: pointer;
+}
+
+.success {
+  border-left: 4px solid green;
+}
+
+.error {
+  border-left: 4px solid red;
+}
+</style>
 
