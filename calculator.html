@@ -1,10 +1,17 @@
-<h1>calculator</h1>
+<!DOCTYPE html>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<h1>Calculator</h1>
 
-
-  <div class="flexbox">
-    <div class="calculator">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    
+      <div class="flexbox">
+      <div class="calculator">
       <input class="display" v-model="current"></input>
       <div class="btn dark" @click="clear()">C</div>
       <div class="btn dark">+/-</div>
@@ -28,10 +35,10 @@
     </div>
   </div>
 
-
-<script>
-export default {
-  name: "Calculator",
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let vm = new Vue({
+        name: "Calculator",
   data() {
     return {
       current: "",
@@ -93,8 +100,10 @@ export default {
       this.operatorClicked = false;
     }
   }
-};
-</script>
+      })
+    </script>
+  </body>
+</html>
 
 <style>  
 #app {
