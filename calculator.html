@@ -38,15 +38,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       let vm = new Vue({
-        id:"#calc",
+        el:"#calc",
         name: "Calculator",
-  data() {
-    return {
+  data: {
       current: "",
       previous: "",
       operator: null,
       operatorClicked: false
-    };
   },
   methods:{
     append(number){
