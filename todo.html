@@ -126,12 +126,13 @@ const todos = [
   },
 ];
       
-      let vm = new Vue({
-        el:"#app",
+let vm = new Vue({
+  el:"#app",
   data: {
-      todos: todos
+      todos: todos,
+      char: ""
   },
- methods: {
+methods: {
     handleDeleteTodo({title}){
       console.log(title);
       this.todos = this.todos.filter(item=> item.title !== title)
