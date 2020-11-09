@@ -106,7 +106,7 @@ const todos = [
   }
       })
       
-Vue.component('todo-list', {
+vm.component('todo-list', {
   template:`
   <div :class="[todo.isComplete ? 'success' : 'error', 'todo-wrapper']">
     <div class="todo-title">
