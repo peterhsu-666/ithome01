@@ -11,7 +11,7 @@
   <body>
     
       <div class="flexbox">
-      <div class="calculator">
+      <div class="calculator" id="calc">
       <input class="display" v-model="current"></input>
       <div class="btn dark" @click="clear()">C</div>
       <div class="btn dark">+/-</div>
@@ -38,6 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       let vm = new Vue({
+        id:"#calc",
         name: "Calculator",
   data() {
     return {
