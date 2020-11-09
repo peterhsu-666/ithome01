@@ -11,7 +11,7 @@
   <div id="app">
     <h1>My Todo List</h1>
     <input v-model="char" v-on:keyup.enter="addTodo">
-    <p style="font-family: consolas;color:red;text-align: center;">↑輸入後按Enter既可新增<button @click="addTodo">確定</button></p>
+    <p style="font-family: consolas;color:red;text-align: left;">↑輸入後按Enter既可新增<button @click="addTodo" style="text-align: right">確定</button></p>
     <!--<input type="text" v-model="char"/> -->
     <todo-list 
                v-for="todo in todos" 
