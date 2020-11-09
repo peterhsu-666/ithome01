@@ -143,10 +143,14 @@ methods: {
       console.log(targetTodo.isComplete);
     },
     addTodo(){
-      this.todos.push({
-        title: this.char,
-        isComplete: false
-      })
+      if(this.todos.find((item) => item.title === this.char) === undefined){
+        this.todos.push({
+          title: this.char,
+          isComplete: false
+        })
+      }else{
+        alert('重複輸入')
+      }
     }
   }
 })
