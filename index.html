@@ -4,4 +4,26 @@
   <a href="calculator.html">計算機</a>
   <!--載入 Vue 的 CDN-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <template>
+  <div id="app">
+    <label for="name">輸入你想顯示的文字吧!</label>
+    <input type="text" v-model="message" name="msg">
+    <h1 v-if="isWelcomed">{{ message }}</h1>
+    <img :src="imgSrc">
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'Welcome to Vue!',
+      imgSrc: 'https://upload.cc/i1/2020/08/23/rGPIy0.jpg',
+      isWelcomed: true
+    };
+  }
+};
+</script>
+  
 </body>
