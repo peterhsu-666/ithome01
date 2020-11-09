@@ -11,9 +11,9 @@
   <div id="app">
     <h1>My Todo List</h1>
     <input v-model="char" v-on:keyup.enter="addTodo">
+    <button @click="addTodo">確定</button>
     <p style="font-family: consolas;color:red;text-align: center;">↑輸入後按Enter既可新增</p>
     <!--<input type="text" v-model="char"/> -->
-    <!--<button @click="addTodo">確定</button>-->
     <todo-list 
                v-for="todo in todos" 
                :key="todo.id" 
@@ -223,6 +223,10 @@ input {
   width: 270px;
   padding: 1.5rem 0.8rem;
   margin-top: 0.3rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+button {
   font-size: 18px;
   font-weight: bold;
 }
