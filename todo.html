@@ -141,9 +141,15 @@ methods: {
       const targetTodo = this.todos.find((item) => item.title === title);
       targetTodo.isComplete = !targetTodo.isComplete;
       console.log(targetTodo.isComplete);
+    },
+    addTodo(){
+      this.todos.push({
+        title: this.char,
+        isComplete: false
+      })
     }
   }
-      })
+})
       
 
       
