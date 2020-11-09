@@ -4,12 +4,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>My Todo List</title>
   </head>
   <body>
     
   <div id="app">
     <h1>My Todo List</h1>
+    <input v-model="char" v-on:keyup.enter="addTodo">
+    <!--<input type="text" v-model="char"/> -->
+    <!--<button @click="addTodo">確定</button>-->
     <todo-list 
                v-for="todo in todos" 
                :key="todo.id" 
@@ -202,6 +205,18 @@ h1 {
 
 .error {
   border-left: 4px solid red;
+}
+
+input {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+  width: 270px;
+  padding: 1.5rem 0.8rem;
+  margin-top: 0.3rem;
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>
 
