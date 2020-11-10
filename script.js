@@ -1,18 +1,18 @@
 var datas = [
 	{
 		no: 1,
-		title: 'Calculator',
+		title: 'calculator',
 		desc: '製作一個簡易的計算機',
-    blog: 'https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/',
+    blog: 'https://peterhsu-666.github.io/ithome01/content/',
     demo: 'calculator.html',
 		//github: 'https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit/',
 		gifYn: 'Y',
 	},
 	{
 		no: 2,
-		title: 'Todo',
+		title: 'todo',
 		desc: '製作一個外出用的待辦事項',
-    blog: 'https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/',
+    blog: 'https://peterhsu-666.github.io/ithome01/content/',
     demo: 'todo.html',
 		//github: 'https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock/',
 		gifYn: 'Y',
@@ -28,8 +28,8 @@ function createView() {
               <div class="course ${data.gifYn === 'Y' ? 'hasGif' : ''}">
                 <div class="course__image">
                   <div class="course__ribbon"><div class="course__no">#${data.no}</div></div>
-                  <div class="course__loading"></div>
-                  <img src="/content/calculator.png" alt="demo${data.no}">
+                  
+                  <img src="${data.blog}${data.title}.png" alt="demo${data.no}">
                 </div>
                 <h2 class="course__title">#${data.no} - ${data.title}</h2>
                 <div class="course__desc">${data.desc}</div>
