@@ -39,7 +39,7 @@ function createView() {
               </div>
             </li>`;
 	});
-	//document.querySelector('.courseList').innerHTML = view;
+	document.querySelector('.courseList').innerHTML = view;
 	//// 加上滑鼠移入移出的效果監聽
 	//var courses = Array.from(document.querySelectorAll('.course'));
 	//courses.forEach(course => {
