@@ -39,13 +39,13 @@ function createView() {
               </div>
             </li>`;
 	});
-	document.querySelector('.courseList').innerHTML = view;
-	// 加上滑鼠移入移出的效果監聽
-	var courses = Array.from(document.querySelectorAll('.course'));
-	courses.forEach(course => {
-		course.addEventListener('mouseenter', changeImgaeType);
-		course.addEventListener('mouseleave', changeImgaeType);
-	});
+	//document.querySelector('.courseList').innerHTML = view;
+	//// 加上滑鼠移入移出的效果監聽
+	//var courses = Array.from(document.querySelectorAll('.course'));
+	//courses.forEach(course => {
+	//	course.addEventListener('mouseenter', changeImgaeType);
+	//	course.addEventListener('mouseleave', changeImgaeType);
+	//});
 }
 
 /** 圖片讀取檢查 */
