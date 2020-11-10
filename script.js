@@ -5,7 +5,7 @@ var datas = [
 		desc: '製作一個簡易的計算機',
     blog: 'https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/',
     demo: 'calculator.html',
-		github: 'https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit/',
+		//github: 'https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit/',
 		gifYn: 'Y',
 	},
 	{
@@ -14,7 +14,7 @@ var datas = [
 		desc: '製作一個外出用的待辦事項',
     blog: 'https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/',
     demo: 'todo.html',
-		github: 'https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock/',
+		//github: 'https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock/',
 		gifYn: 'Y',
 	},
 ];
@@ -36,9 +36,6 @@ function createView() {
                 <a class="course__btn" href="${
 									data.demo
 								}" target="_blank">DEMO</a>
-                <a class="course__btn" href="${
-									data.github
-								}" target="_blank">GitHub</a>
               </div>
             </li>`;
 	});
