@@ -1,19 +1,19 @@
 var datas = [
 	{
 		no: 1,
-		title: 'JavaScript Drum Kit',
-		desc: '製作一個可透過按鍵發聲的爵士鼓',
+		title: 'Calculator',
+		desc: '製作一個簡易的計算機',
     blog: 'https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/',
-    demo: 'https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html',
+    demo: 'calculator.html',
 		github: 'https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit/',
 		gifYn: 'Y',
 	},
 	{
 		no: 2,
-		title: 'JS and CSS Clock',
-		desc: '製作一個實時的小時鐘',
+		title: 'Todo',
+		desc: '製作一個外出用的待辦事項',
     blog: 'https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/',
-    demo: 'https://guahsu.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html',
+    demo: 'todo.html',
 		github: 'https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock/',
 		gifYn: 'Y',
 	},
@@ -35,12 +35,10 @@ function createView() {
                 <div class="course__desc">${data.desc}</div>
                 <a class="course__btn" href="${
 									data.demo
-								}" target="_blank" onclick="ga('send', 'event', 'button', 'click', 'js30-blog-${data.no}', 1);">DEMO</a>
+								}" target="_blank">DEMO</a>
                 <a class="course__btn" href="${
 									data.github
-								}" target="_blank" onclick="ga('send', 'event', 'button', 'click', 'js30-github-${
-			data.no
-		}', 1);">GitHub</a>
+								}" target="_blank">GitHub</a>
               </div>
             </li>`;
 	});
