@@ -29,7 +29,7 @@ function createView() {
                 <div class="course__image">
                   <div class="course__ribbon"><div class="course__no">#${data.no}</div></div>
                   <div class="course__loading"></div>
-                  <img src="${data.blog}demo${data.no}.png" alt="demo${data.no}">
+                  <img src="/content/calculator.png" alt="demo${data.no}">
                 </div>
                 <h2 class="course__title">#${data.no} - ${data.title}</h2>
                 <div class="course__desc">${data.desc}</div>
